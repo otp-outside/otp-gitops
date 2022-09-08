@@ -30,7 +30,7 @@ resources:
  #- argocd/namespaces/namespace-metal-provisioner.yaml
  
  # Ansible Automation Platform
- - argocd/namespaces/namespace-ansible-automation-platform.yaml
+# - argocd/namespaces/namespace-ansible-automation-platform.yaml
  
  # OpenShift Virtualization (Can be used to host Instana Instance)
  #- argocd/rbac/rbac-openshift-virtualization.yaml
@@ -39,7 +39,7 @@ resources:
  #- argocd/namespaces/namespace-openshift-virtualization-virtual-machines.yaml
  
  # Openshift Advanced Cluster Security
- #- argocd/namespaces/namespace-openshift-acs.yaml
+ - argocd/namespaces/namespace-openshift-acs.yaml
  
  # IBM Infrastruture Automation aka MCM
  #- argocd/namespaces/namespace-ibm-infra-automation.yaml
@@ -58,8 +58,8 @@ resources:
  
  # OpenShift Data Foundation aka OpenShift Container Storage
  #- unneeded for IBM Cloud ROKS with ODF add-on configured
- - argocd/namespaces/namespace-openshift-storage.yaml
- - argocd/storage.yaml
+ #- argocd/namespaces/namespace-openshift-storage.yaml
+ #- argocd/storage.yaml
  
  # MachineSets and Infra Nodes
  #- unneeded for IBM Cloud ROKS with ODF add-on configured
