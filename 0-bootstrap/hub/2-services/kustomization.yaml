@@ -62,7 +62,7 @@ resources:
 
  # OpenShift Advanced Cluster Security (aka Stackrox)
  - argocd/operators/openshift-acs-operator.yaml
- #- argocd/instances/openshift-acs-instance.yaml
+ - argocd/instances/openshift-acs-instance.yaml
 
  # Observability
  #- argocd/operators/turbonomic.yaml
