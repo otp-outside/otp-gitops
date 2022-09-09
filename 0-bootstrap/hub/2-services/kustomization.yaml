@@ -61,8 +61,8 @@ resources:
  #- argocd/instances/openshift-virtualization-instance.yaml
 
  # OpenShift Advanced Cluster Security (aka Stackrox)
- #- argocd/operators/openshift-acs-operator.yaml
- #- argocd/instances/openshift-acs-instance.yaml
+ - argocd/operators/openshift-acs-operator.yaml
+ - argocd/instances/openshift-acs-instance.yaml
 
  # Observability
  #- argocd/operators/turbonomic.yaml
