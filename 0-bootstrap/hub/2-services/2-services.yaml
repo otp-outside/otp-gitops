@@ -96,8 +96,6 @@ spec:
     kind: roles
   - group: "route.openshift.io"
     kind: routes
-  - group: "route.openshift.io"
-    kind: route
   - group: ""
     kind: RoleBinding
   - group: "rbac.authorization.k8s.io"
