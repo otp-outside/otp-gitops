@@ -27,7 +27,7 @@ resources:
  - argocd/namespaces/namespace-rhacm-clusterpools.yaml
  - argocd/namespaces/namespace-rhacm-clusterclaims.yaml
  # RHACM Metal Provisioner (Not required if Hub is running on Bare-Metal)
- #- argocd/namespaces/namespace-metal-provisioner.yaml
+ - argocd/namespaces/namespace-metal-provisioner.yaml
  
  # Ansible Automation Platform
 # - argocd/namespaces/namespace-ansible-automation-platform.yaml
