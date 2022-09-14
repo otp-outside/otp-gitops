@@ -63,7 +63,7 @@ resources:
  
  # MachineSets and Infra Nodes
  #- unneeded for IBM Cloud ROKS with ODF add-on configured
- - argocd/machinesets.yaml
+ #- argocd/machinesets.yaml
  - argocd/infraconfig.yaml
  
  # Console link
