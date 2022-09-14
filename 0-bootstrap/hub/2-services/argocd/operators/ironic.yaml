@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: ironic
   annotations:
-    argocd.argoproj.io/sync-wave: "200"
+    argocd.argoproj.io/sync-wave: "210"
   labels:
     gitops.tier.group: rhacm
     gitops.tier.layer: services
