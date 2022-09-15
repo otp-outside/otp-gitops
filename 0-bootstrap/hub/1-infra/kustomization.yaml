@@ -44,6 +44,9 @@ resources:
  # IBM Infrastruture Automation aka MCM
  #- argocd/namespaces/namespace-ibm-infra-automation.yaml
  
+ # Logging 
+ - argocd/namespaces/namespace-openshift-logging.yaml
+
  # RHSSO
  #- argocd/namespaces/namespace-sso.yaml
  #- argocd/namespaces/namespace-sso-integration.yaml
