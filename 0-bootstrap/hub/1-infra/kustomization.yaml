@@ -69,6 +69,11 @@ resources:
  # Console link
  - argocd/consolelink.yaml
 
+
+ # ML models 
+ - argocd/namespaces/namespace-ml-models.yaml
+
+
 patches:
 - target:
     group: argoproj.io
