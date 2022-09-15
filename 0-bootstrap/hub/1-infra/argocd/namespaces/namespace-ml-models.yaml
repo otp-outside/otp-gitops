@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "100"
 spec:
   destination:
-    namespace: ml-models-v1
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: infra
   source:
