@@ -73,7 +73,7 @@ resources:
 
  # Logging
  - argocd/operators/openshift-logging-operator.yaml
- - argocd/operators/openshift-logging-instance.yaml
+ - argocd/instances/openshift-logging-instance.yaml
 
 
  # RHSSO
