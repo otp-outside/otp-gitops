@@ -71,6 +71,11 @@ resources:
  #- argocd/operators/turbonomic.yaml
  #- argocd/instances/instana-agent.yaml
 
+ # Logging
+ - argocd/operators/openshift-logging-operator.yaml
+ - argocd/operators/openshift-logging-instance.yaml
+
+
  # RHSSO
  #- argocd/operators/rhsso-operator.yaml
  #- argocd/instances/rhsso-instance.yaml
