@@ -48,7 +48,7 @@ resources:
  #- argocd/instances/openshift-acm-discovery-service.yaml
  # Red Hat Advanced Cluster Management - Bare Metal Operator and Ironic
  #- argocd/operators/baremetal-operator.yaml
- - argocd/operators/ironic.yaml
+ #- argocd/operators/ironic.yaml
 
  #- argocd/operators/ibm-cp4mcm-operator.yaml
  #- argocd/instances/ibm-cp4mcm-instance.yaml
