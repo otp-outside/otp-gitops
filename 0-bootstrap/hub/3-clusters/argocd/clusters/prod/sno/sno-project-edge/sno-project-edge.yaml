@@ -23,7 +23,7 @@ spec:
       values: |
         # Infrastructure Environment Name
         infraEnv:
-          name: bens-infrastructure
+          name: bens-infrastructure # Must Match cluster.name value
           location: benswinney-house
           networkType: dhcp # Valid Values are dhcp or static
           labels: "cogs: visualinspection"
@@ -31,7 +31,7 @@ spec:
 
         # Cluster Details
         cluster:
-          name: sno
+          name: bens-infrastructure # Must Match infraEnv.name value
           imageName: 4.10.32
           clusterNetwork: 10.128.0.0/14
           serviceNetwork: 172.30.0.0/16
