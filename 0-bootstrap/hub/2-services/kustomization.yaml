@@ -21,8 +21,8 @@ resources:
 
  # Secrets Managment
  - argocd/instances/sealed-secrets.yaml
- #- argocd/operators/external-secrets.yaml
- #- argocd/instances/external-secrets.yaml
+ - argocd/operators/external-secrets.yaml
+ - argocd/instances/external-secrets.yaml
 
  # CICD
  #- argocd/operators/grafana-operator.yaml
