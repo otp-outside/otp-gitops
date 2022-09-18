@@ -25,7 +25,7 @@ spec:
         infraEnv:
           name: bens-infrastructure # Must Match cluster.name value
           location: benswinney-house
-          networkType: dhcp # Valid Values are dhcp or static
+          networkType: static # Valid Values are dhcp or static
           ntpSources: 192.168.1.1
 
         # Cluster Details
@@ -41,6 +41,10 @@ spec:
           name: host0
           macAddress: 52:54:00:c6:fe:cc
           bmcAddress: redfish-virtualmedia+http://ai-edge.swinney.io/redfish/v1/Systems/b6c92bbb-1e87-4972-b17a-12def3948890
+          networkCard: enp1s0
+          ipAddress: 192.168.1.20
+          gatewayAddress: 192.168.1.1
+          diskDeviceName: /dev/vda
 
         # Manage Cluster from Hub Cluster Repository
         managedCluster: 
