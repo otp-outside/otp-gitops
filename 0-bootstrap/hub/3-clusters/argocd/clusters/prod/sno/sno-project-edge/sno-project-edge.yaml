@@ -52,7 +52,7 @@ spec:
 
         # Add Cluster to Existing ClusterSet
         clusterSet:
-          name: "multicloud-cluster-set"
+          name: "last-mile-gitops"
           enabled: disable 
 
         # Cloud Provider Configuration
