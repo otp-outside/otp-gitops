@@ -25,7 +25,7 @@ spec:
         infraEnv:
           name: bens-infrastructure # Must Match cluster.name value
           location: benswinney-house
-          networkType: static # Valid Values are dhcp or static
+          networkType: dhcp # Valid Values are dhcp or static
           ntpSources: 192.168.1.1
 
         # Cluster Details
