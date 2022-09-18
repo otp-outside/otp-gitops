@@ -26,7 +26,6 @@ spec:
           name: bens-infrastructure # Must Match cluster.name value
           location: benswinney-house
           networkType: dhcp # Valid Values are dhcp or static
-          labels: "cogs: visualinspection"
           ntpSources: 192.168.1.1
 
         # Cluster Details
