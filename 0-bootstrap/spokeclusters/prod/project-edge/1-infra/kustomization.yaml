@@ -1,5 +1,5 @@
 resources:
-
+ - argocd/namespaces/ml-models.yaml
 patches:
 - target:
     group: argoproj.io
