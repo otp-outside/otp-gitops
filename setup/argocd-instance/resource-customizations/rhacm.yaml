@@ -37,6 +37,11 @@ data:
             hs.message = condition.message
             return hs
           end
+          if condition.type == "Provisioned" and condition.status == "True" then
+            hs.status = "Healthy"
+            hs.message = condition.message
+            return hs
+          end
         end
       end
     end
@@ -96,4 +101,4 @@ data:
     end
     hs.status = "Progressing"
     hs.message = "Waiting for cluster claim"
-    return hs 
+    return hs
