@@ -72,8 +72,8 @@ resources:
  #- argocd/instances/instana-agent.yaml
 
  # Logging
- - argocd/operators/openshift-logging-operator.yaml
- - argocd/instances/openshift-logging-instance.yaml
+#  - argocd/operators/openshift-logging-operator.yaml
+#  - argocd/instances/openshift-logging-instance.yaml
 
 
  # RHSSO
