@@ -18,6 +18,7 @@ spec:
     path: instances/sysflow/sf-chart
     helm:
       values: |
+        # change this if using k8s cluster
         clusterInfoEnabled: false
         clusterID: CHANGETHIS-CLUSTER_ID
         accountName: CHANGETHIS-ACCOUNT_NAME
@@ -165,17 +166,17 @@ spec:
 
 
           # object store address (overridden by install script). Only used with "s3"
-          s3Endpoint: "CHANGETHIS-COS_ENDPOINT"
+          s3Endpoint: "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints"
           # object store port. Only used with "s3"
           s3Port: 443
           # object store bucket where to push traces. Only used with "s3"
-          s3Bucket: "CHANGETHIS-S3_SYSFLOW_BUCKET_NAME"
+          s3Bucket: "cloud-object-storage-td-cos-standard-e7t"
           # object store location (overridden by install script). Only used with "s3"
           s3Location:  ""
           # object store access key (overridden by install script). Only used with "s3"
           s3AccessKey: ""
           # object store secret key (overridden by install script). Only used with "s3"
-          s3SecretKey: "CHANGETHIS-S3_REGION"
+          s3SecretKey: "au-syd"
           # object store connection, 'true' if TLS-enabled, 'false' otherwise. Only used with "s3"
           s3Secure: "true"
 
