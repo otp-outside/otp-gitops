@@ -61,6 +61,7 @@ resources:
 
  # SysFlow 
  - argocd/namespaces/namespace-sysflow.yaml
+ - argocd/rbac/rbac-sysflow.yaml
  
  # OpenShift Data Foundation aka OpenShift Container Storage
  #- unneeded for IBM Cloud ROKS with ODF add-on configured
