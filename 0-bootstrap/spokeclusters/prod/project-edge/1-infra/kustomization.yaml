@@ -1,5 +1,7 @@
 resources:
  - argocd/namespaces/ml-models.yaml
+ - argocd/namespaces/namespace-openshift-acs.yaml
+
 patches:
 - target:
     group: argoproj.io

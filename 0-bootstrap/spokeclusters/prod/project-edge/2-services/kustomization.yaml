@@ -1,4 +1,5 @@
 resources:
+ - argocd/operators/openshift-acs-operator.yaml
 
 patches:
 - target:
