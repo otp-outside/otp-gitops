@@ -1,4 +1,12 @@
 resources:
+ - argocd/operators/ibm-cp4s-operator.yaml
+ - argocd/instances/ibm-cp4sthreatmanagements-instance.yaml
+ - argocd/operators/ibm-foundations.yaml
+ - argocd/instances/ibm-foundational-services-instance.yaml
+ - argocd/operators/ibm-automation-foundation-core-operator.yaml
+ - argocd/operators/ibm-catalogs.yaml
+ - argocd/operators/openshift-serverless.yaml
+ - argocd/instances/openshift-serverless-knative-serving-instance.yaml
 
 patches:
 - target:

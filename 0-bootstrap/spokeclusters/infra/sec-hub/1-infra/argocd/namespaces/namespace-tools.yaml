@@ -1,17 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-spokecluster-dev-project-simple
+  name: tools
   namespace: openshift-gitops
+  labels:
+    gitops.tier.layer: infra
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
 spec:
   destination:
     namespace: openshift-gitops
     server: https://kubernetes.default.svc
-  project: default
+  project: infra
   source:
-    path: 0-bootstrap/spokeclusters/dev/project-simple
-    repoURL: https://github.com/testing-gitops/otp-gitops.git
-    targetRevision: master
+    path: namespaces/tools
   syncPolicy:
     automated:
       prune: true

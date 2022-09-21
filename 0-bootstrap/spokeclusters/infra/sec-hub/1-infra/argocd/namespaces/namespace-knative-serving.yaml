@@ -1,8 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: openshift-storage-namespace
-  namespace: openshift-gitops
+  name: namespace-knative-serving
   labels:
     gitops.tier.layer: infra
   annotations:
@@ -13,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: infra
   source:
-    path: namespaces/openshift-storage
+    path: namespaces/knative-serving
   syncPolicy:
     automated:
       prune: true

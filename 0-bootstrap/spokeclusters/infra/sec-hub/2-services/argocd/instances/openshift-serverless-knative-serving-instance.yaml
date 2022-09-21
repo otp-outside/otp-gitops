@@ -1,21 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: openshift-compliance-operator
+  name: openshift-serverless-knative-serving-instance
   annotations:
-    argocd.argoproj.io/sync-wave: "200"
+    argocd.argoproj.io/sync-wave: "250"
   labels:
-    gitops.tier.group: compliance
+    gitops.tier.group: cntk
     gitops.tier.layer: services
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    gitops.tier.source: git
 spec:
   destination:
-    namespace: openshift-compliance
+    namespace: knative-serving
     server: https://kubernetes.default.svc
   project: services
   source:
-    path: operators/openshift-compliance-operator
+    path: instances/knative-serving
   syncPolicy:
     automated:
       prune: true
