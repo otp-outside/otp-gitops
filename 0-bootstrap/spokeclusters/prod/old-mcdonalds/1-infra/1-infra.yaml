@@ -2,14 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: services
+  name: infra
   labels:
-    gitops.tier.layer: services
+    gitops.tier.layer: infra
 spec:
-  sourceRepos: [] # Populated by kustomize patches in 2-services/kustomization.yaml
+  sourceRepos: [] # Populated by kustomize patches in 1-infra/kustomization.yaml
   destinations:
   - namespace: '*'
-    server: https://kubernetes.default.svc 
+    server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
@@ -25,20 +25,19 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: services
+  name: infra
   annotations:
-    argocd.argoproj.io/sync-wave: "200"
+    argocd.argoproj.io/sync-wave: "100"
   labels:
     gitops.tier.layer: gitops
 spec:
   destination:
     namespace: openshift-gitops
     server: https://kubernetes.default.svc
-  project: services
-  source: # repoURL  and targetRevision populated by kustomize patches in 2-services/kustomization.yaml
-    path: 0-bootstrap/spokeclusters/infra/sec-hub/2-services
+  project: infra
+  source: # repoURL  and targetRevision populated by kustomize patches in 1-infra/kustomization.yaml
+    path: 0-bootstrap/spokeclusters/prod/old-mcdonalds/1-infra
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-
