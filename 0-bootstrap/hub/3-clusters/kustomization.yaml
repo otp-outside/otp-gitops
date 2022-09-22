@@ -45,7 +45,7 @@ resources:
  ### Single Node OpenShift
  - argocd/clusters/prod/sno/sno-project-edge/sno-project-edge.yaml
  #- argocd/clusters/prod/sno/sno-old-mcdonalds/sno-old-mcdonalds.yaml
- # - argocd/clusters/prod/sno/sno-project-eltham/sno-project-eltham.yaml
+ - argocd/clusters/prod/sno/sno-project-eltham/sno-project-eltham.yaml
 
  # Configure Submariner - Cross Cluster/Cloud communication
  #- argocd/submariner/add-existing-clusters.yaml
