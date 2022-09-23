@@ -77,7 +77,7 @@ resources:
  - argocd/instances/openshift-logging-instance.yaml
 
  # sysflow 
- # - argocd/instances/sysflow.yaml
+ - argocd/instances/sysflow.yaml
 
  # RHSSO
  #- argocd/operators/rhsso-operator.yaml
