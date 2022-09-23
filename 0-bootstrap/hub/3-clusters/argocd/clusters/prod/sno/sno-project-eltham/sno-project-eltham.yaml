@@ -67,4 +67,4 @@ spec:
         externalSecrets:
           pullSecretRemoteRef: 32286fad-dd7d-11be-a761-0c497756176c
           sshPrivateKeyRemoteRef: ae87a773-e06c-e9b2-10b8-6e6a12f922b9
-          bmcCredentialsRemoteRef: bd8f9a25-3ba0-089c-517d-13b1a8a516cc
+          bmcCredentialsRemoteRef:   #bd8f9a25-3ba0-089c-517d-13b1a8a516cc
