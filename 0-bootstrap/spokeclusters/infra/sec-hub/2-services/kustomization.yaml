@@ -7,6 +7,8 @@ resources:
  - argocd/operators/ibm-catalogs.yaml
  - argocd/operators/openshift-serverless.yaml
  - argocd/instances/openshift-serverless-knative-serving-instance.yaml
+ - argocd/operators/ibm-platform-navigator.yaml
+ - argocd/instances/ibm-platform-navigator-instance.yaml
 
 patches:
 - target:
