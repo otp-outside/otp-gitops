@@ -7,6 +7,8 @@ resources:
  - argocd/operators/ibm-catalogs.yaml
  - argocd/operators/openshift-serverless.yaml
  - argocd/instances/openshift-serverless-knative-serving-instance.yaml
+# - argocd/operators/ibm-platform-navigator.yaml
+# - argocd/instances/ibm-platform-navigator-instance.yaml
 
 patches:
 - target:
@@ -28,3 +30,11 @@ patches:
     - op: add
       path: /spec/source/repoURL
       value: https://charts.cloudnativetoolkit.dev
+- target:
+    name: ibm-cp4s-operator
+  patch: |-
+    - op: add
+      path: /spec/source/helm/parameters/-
+      value:
+        name: spec.channel
+        value: v1.10
