@@ -51,7 +51,10 @@ resources:
  #- argocd/submariner/add-existing-clusters.yaml
  #- argocd/submariner/configure-azure.yaml
  #- argocd/submariner/deploy-submariner.yaml
- 
+
+ ### imported-clusters
+ - argocd/clusters/import/sec-hub/rhacm-appsub-bootstrap.yaml
+
 patches:
 - target:
     group: argoproj.io
