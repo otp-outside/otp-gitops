@@ -29,7 +29,7 @@ metadata:
     app: bootstrap-ibm-cloud-sat-sec-hub
 spec:
   type: Git
-  pathname: '{{ .Values.managedCluster.managedRepo }}' 
+  pathname: 'https://github.com/otp-outside/otp-gitops.git' 
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
