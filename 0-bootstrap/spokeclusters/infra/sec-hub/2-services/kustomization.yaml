@@ -14,7 +14,7 @@ patches:
 - target:
     group: argoproj.io
     kind: Application
-    labelSelector: "gitops.tier.layer=services, gitops.tier.source=git"
+    labelSelector: "gitops.tier.layer=services,gitops.tier.source=git"
   patch: |-
     - op: add
       path: /spec/source/repoURL
