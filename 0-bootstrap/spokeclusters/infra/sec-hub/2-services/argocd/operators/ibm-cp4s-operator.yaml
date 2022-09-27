@@ -27,8 +27,6 @@ spec:
       parameters:
       - name: metadata.name
         value: ibm-cp-security-operator
-      - name: spec.channel
-        value: v1.9
       - name: spec.installPlanApproval
         value: Automatic
       - name: spec.name

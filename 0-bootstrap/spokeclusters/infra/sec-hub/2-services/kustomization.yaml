@@ -33,7 +33,7 @@ patches:
 - target:
     name: ibm-cp4s-operator
   patch: |-
-    - op: replace
+    - op: add
       path: /spec/source/helm/parameters/-
       value:
         name: spec.channel
