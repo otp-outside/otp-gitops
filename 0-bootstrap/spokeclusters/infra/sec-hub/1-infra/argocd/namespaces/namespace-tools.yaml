@@ -18,3 +18,11 @@ spec:
     automated:
       prune: true
       selfHeal: true
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: tools
+spec:
+  targetNamespaces:
+    - tools
