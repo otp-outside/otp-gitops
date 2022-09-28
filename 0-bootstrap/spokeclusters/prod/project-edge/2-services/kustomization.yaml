@@ -1,7 +1,7 @@
 resources:
  - argocd/operators/openshift-acs-operator.yaml
  - argocd/instances/openshift-acs-instance.yaml
-
+ # - argocd/instances/sysflow.yaml
 patches:
 - target:
     group: argoproj.io
