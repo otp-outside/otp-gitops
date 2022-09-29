@@ -8,7 +8,8 @@ resources:
 - argocd/namespaces/namespace-knative-serving.yaml
 - argocd/namespaces/namespace-knative-serving-ingress.yaml
 - argocd/namespaces/namespace-openldap.yaml
-
+- argocd/namespaces/namespace-sysflow.yaml
+- argocd/rbac/rbac-sysflow.yaml
 patches:
 - target:
     group: argoproj.io

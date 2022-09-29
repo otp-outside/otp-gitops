@@ -9,6 +9,7 @@ resources:
  - argocd/instances/openshift-serverless-knative-serving-instance.yaml
 # - argocd/operators/ibm-platform-navigator.yaml
 # - argocd/instances/ibm-platform-navigator-instance.yaml
+ - argocd/instances/sysflow.yaml
  - argocd/instances/openldap.yaml
 
 patches:
