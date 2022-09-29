@@ -7,6 +7,7 @@ resources:
 - argocd/namespaces/namespace-knative-eventing.yaml
 - argocd/namespaces/namespace-knative-serving.yaml
 - argocd/namespaces/namespace-knative-serving-ingress.yaml
+- argocd/namespaces/namespace-openldap.yaml
 
 patches:
 - target:
