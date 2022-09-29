@@ -16,6 +16,17 @@ patches:
 - target:
     group: argoproj.io
     kind: Application
+    labelSelector: "gitops.tier.group=cntk,gitops.tier.layer=services,gitops.tier.source=cntk-git"
+  patch: |-
+    - op: add
+      path: /spec/source/repoURL
+      value: https://charts.cloudnativetoolkit.dev
+    - op: add
+      path: /spec/source/targetRevision
+      value: master
+- target:
+    group: argoproj.io
+    kind: Application
     labelSelector: "gitops.tier.layer=services,gitops.tier.source=git"
   patch: |-
     - op: add
