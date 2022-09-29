@@ -7,8 +7,7 @@ metadata:
   labels:
     gitops.tier.group: cntk
     gitops.tier.layer: services
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    gitops.tier.source: git
 spec:
   destination:
     namespace: sysflow
