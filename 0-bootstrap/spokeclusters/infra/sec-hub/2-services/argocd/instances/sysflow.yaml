@@ -1,0 +1,196 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sysflow
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
+  labels:
+    gitops.tier.group: cntk
+    gitops.tier.layer: services
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: sysflow
+    server: https://kubernetes.default.svc
+  project: services
+  source:
+    path: instances/sysflow/sf-chart
+    helm:
+      values: |
+        # change this if using k8s cluster
+        clusterInfoEnabled: false
+        clusterID: CHANGETHIS-CLUSTER_ID
+        accountName: CHANGETHIS-ACCOUNT_NAME
+        accountID: CHANGETHIS-ACCOUNT_ID
+        solution: CHANGETHIS-SOLUTION
+        environment: CHANGETHIS-ENVIRONMENT
+
+        #imagePullSecrets:
+        #  - name: CHANGETHIS-IMAGE_PULL_SECRET
+
+        livenessProbe:
+          exec:
+            command: [ "test", "-e", "/sock/sysflow.sock" ]
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          failureThreshold: 3
+
+        collectorresources:
+          requests:
+            cpu: 600m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+
+        processorresources:
+          requests:
+            cpu: 600m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+
+        exporterresources:
+          requests:
+            cpu: 600m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+
+        resources:
+          requests:
+            cpu: 200m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+
+        findings:
+          enabled: false
+
+
+
+
+        sfcollector:
+          # Pull policy for image (Always|Never|IfNotPresent)
+          imagepullpolicy: Always
+          # Image repository
+          repository: sysflowtelemetry/sf-collector
+          # Image tag
+          tag: 0.4.4
+          # Filter expression
+          filter: '"container.type!=host and container.name!=sfprocessor and container.name!=sfcollector"'
+          # Use this criPath if running docker runtime
+          criPath: ""
+          # Use this criPath if running containerd runtime
+          #criPath: "/var/run/containerd/containerd.sock"
+          # Use this criPath if running crio runtime
+          #criPath: "/var/run/crio/crio.sock"
+          # enable drop mode removes syscalls inside the kernel before they are passed up to the collector
+          # results in much better performance, less drops, but does remove mmaps from output
+          dropMode: true
+          # filters out any descriptor that is not a file, including unix sockets and pipes
+          fileOnly: true
+          # enables the creation of process flows
+          procFlow: true
+          # sets mode for reads: "0" enables recording all file reads as flows.  "1" disables all file reads.
+          # "2" disables recording file reads to noisy directories: "/proc/", "/dev/", "/sys/", "//sys/",
+          # "/lib/",  "/lib64/", "/usr/lib/", "/usr/lib64/"
+          readMode: "2"
+          # enables ebpf probe (required for minikube)
+          ebpf: false
+          # mounts /etc directory in container (required for minikube and Google COS)
+          mountEtc: true
+          # directory where traces are written inside container
+          outDir: /mnt/data/
+          #sysflow file rotation interval
+          interval: 300
+
+        sfprocessor:
+          # Enabled
+          enabled: true
+          # Comment out if you always want to pull images
+          imagepullpolicy: Always
+          # Image repository
+          repository: sysflowtelemetry/sf-processor
+          # Image tag
+          tag: 0.4.4
+          #Override processor exporter in pipeline.json
+          override: true
+          # Export type (terminal|file|syslog)
+          export: syslog
+          # rsyslog host address
+          syslogHost: localhost
+          # rsyslog port
+          syslogPort: 514
+          # rsyslog proto
+          syslogProto: tcp
+          # true if using config maps for policy configs
+          configMapEnabled: true
+          # directory where raw findings are written too.
+          # Must be the same as the findings.path value in the
+          # pipeline.json
+          findingsDir: "/mnt/findings/"
+
+        # sysflow exporter parameters
+        sfexporter:
+          #enabled
+          enabled: false
+          # Comment out if you always want to pull images
+          imagepullpolicy: Always
+          # image repository
+          repository: sysflowtelemetry/sf-exporter
+          # image tag
+          tag: 0.4.4
+          # export inverval
+          interval: 5
+          # directory where traces are read from inside container
+          outDir: /mnt/data/
+          # type of export.  Supported exports are a local copy and s3 export
+          type: "s3"
+          # The directory to copy too.  This field only used with local
+          # toDir: /mnt/sysflow/
+          # directory where raw findings are written too.
+          # Must be the same as the findings.path value in the
+          # pipeline.json
+          findingsDir: "/mnt/findings/"
+          # mode
+          mode: "move-del"
+          # dirs
+          dirs: "/mnt/data/"
+          # sets logging level, DEBUG, INFO, WARNING, ERROR, CRITICAL
+          log: "INFO"
+
+
+          # object store address (overridden by install script). Only used with "s3"
+          s3Endpoint: "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints"
+          # object store port. Only used with "s3"
+          s3Port: 443
+          # object store bucket where to push traces. Only used with "s3"
+          s3Bucket: "cloud-object-storage-td-cos-standard-e7t"
+          # object store location (overridden by install script). Only used with "s3"
+          s3Location:  ""
+          # object store access key (overridden by install script). Only used with "s3"
+          s3AccessKey: ""
+          # object store secret key (overridden by install script). Only used with "s3"
+          s3SecretKey: "au-syd"
+          # object store connection, 'true' if TLS-enabled, 'false' otherwise. Only used with "s3"
+          s3Secure: "true"
+
+        nodeSelector: {}
+
+        tolerations: []
+
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                  - {key: kubernetes.io/arch, operator: In, values: [amd64]}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
