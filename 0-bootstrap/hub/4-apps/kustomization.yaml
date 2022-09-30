@@ -22,7 +22,7 @@ resources:
  #- argocd/cloudpaks/cp4i/cp4i.yaml
 
 ## Machine Learning Models 
- # - argocd/ml-models/ml-model-v1.yaml
+ - argocd/ml-models/ml-model-v1.yaml
  #- argocd/ml-models/ml-model-v2.yaml
 
 patches:
