@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: services
   source:
-    path: instances/openshift-acs-instance/overlays/old-macdonalds
+    path: instances/openshift-acs-instance/overlays/sellfridges-appliances
   syncPolicy:
     automated:
       prune: true
