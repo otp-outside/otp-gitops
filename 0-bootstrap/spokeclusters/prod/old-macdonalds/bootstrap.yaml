@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-spokecluster-prod-old-mcdonalds
+  name: bootstrap-spokecluster-prod-old-macdonalds
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: 0-bootstrap/spokeclusters/prod/old-mcdonalds
+    path: 0-bootstrap/spokeclusters/prod/old-macdonalds
     repoURL: https://github.com/otp-outside/otp-gitops.git
     targetRevision: master
   syncPolicy:

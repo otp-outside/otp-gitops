@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: clusters-sno-prod-old-mcdonalds
+  name: clusters-sno-prod-old-macdonalds
   annotations:
     argocd.argoproj.io/sync-wave: "350"
   labels:
@@ -23,14 +23,14 @@ spec:
       values: |
         # Infrastructure Environment Name
         infraEnv:
-          name: old-mcdonalds # Must Match cluster.name value
-          location: old-mcdonalds-chicken-farm
+          name: old-macdonalds # Must Match cluster.name value
+          location: old-macdonalds-chicken-farm
           networkType: dhcp # Valid Values are dhcp or static
           ntpSources: 192.168.1.1
 
         # Cluster Details
         cluster:
-          name: old-mcdonalds # Must Match infraEnv.name value
+          name: old-macdonalds # Must Match infraEnv.name value
           imageName: 4.10.32
           clusterNetwork: 10.128.0.0/14
           serviceNetwork: 172.30.0.0/16
@@ -51,7 +51,7 @@ spec:
           status: "enabled" # Valid values "enabled" or "disabled"
           managedRepo: https://github.com/otp-outside/otp-gitops.git # Repository that will be used to manage the Cluster resources
           environment: prod # Typically this would be dev, test, cicd, prod
-          projectName: old-mcdonalds # This could be a project, line of business, anything that makes sense to you. This references the folder name
+          projectName: old-macdonalds # This could be a project, line of business, anything that makes sense to you. This references the folder name
                                     # within the "environment" folder
 
         # Add Cluster to Existing ClusterSet

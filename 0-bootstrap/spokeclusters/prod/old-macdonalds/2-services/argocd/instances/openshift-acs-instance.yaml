@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: services
   source:
-    path: instances/openshift-acs-instance/overlays/sno
+    path: instances/openshift-acs-instance/overlays/old-macdonalds
   syncPolicy:
     automated:
       prune: true
