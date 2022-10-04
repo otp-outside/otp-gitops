@@ -3,7 +3,7 @@ resources:
  - argocd/ml-models/ml-model-v1.yaml
  - argocd/ml-models/ml-model-v2.yaml
  - argocd/ml-models/ml-model-v3.yaml # << added v3 model here 
- # - argocd/ml-models/ml-model-v4.yaml # <<
+ - argocd/ml-models/ml-model-v4.yaml # <<
 patches:
 - target:
     group: argoproj.io
