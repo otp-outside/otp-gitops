@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: clusters-sno-prod-old-mcdonalds
+  name: clusters-sno-prod-sellfridges-appliances
   annotations:
     argocd.argoproj.io/sync-wave: "350"
   labels:
@@ -23,15 +23,15 @@ spec:
       values: |
         # Infrastructure Environment Name
         infraEnv:
-          name: old-mcdonalds # Must Match cluster.name value
-          location: old-mcdonalds-chicken-farm
+          name: sellfridges-appliances # Must Match cluster.name value
+          location: Not-London
           networkType: dhcp # Valid Values are dhcp or static
           ntpSources: 192.168.1.1
 
         # Cluster Details
         cluster:
-          name: old-mcdonalds # Must Match infraEnv.name value
-          imageName: 4.10.32
+          name: sellfridges-appliances # Must Match infraEnv.name value
+          imageName: 4.11.6
           clusterNetwork: 10.128.0.0/14
           serviceNetwork: 172.30.0.0/16
           machineNetwork: 192.168.1.0/24
@@ -39,10 +39,10 @@ spec:
         # Hosts Details
         hosts:
           name: host0
-          macAddress: 52:54:00:c6:fe:cd
-          bmcAddress: redfish-virtualmedia+http://ai-edge.swinney.io/redfish/v1/Systems/b6c92bbb-1e87-4972-b17a-12def3948888
+          macAddress: 52:54:00:c6:fe:ce
+          bmcAddress: redfish-virtualmedia+http://ai-edge.swinney.io/redfish/v1/Systems/b6c92bbb-1e87-4972-b17a-12def3948892
           networkCard: enp1s0
-          ipAddress: 192.168.1.21
+          ipAddress: 192.168.1.22
           gatewayAddress: 192.168.1.1
           diskDeviceName: /dev/vda
 
@@ -51,7 +51,7 @@ spec:
           status: "enabled" # Valid values "enabled" or "disabled"
           managedRepo: https://github.com/otp-outside/otp-gitops.git # Repository that will be used to manage the Cluster resources
           environment: prod # Typically this would be dev, test, cicd, prod
-          projectName: old-mcdonalds # This could be a project, line of business, anything that makes sense to you. This references the folder name
+          projectName: sellfridges-appliances # This could be a project, line of business, anything that makes sense to you. This references the folder name
                                     # within the "environment" folder
 
         # Add Cluster to Existing ClusterSet

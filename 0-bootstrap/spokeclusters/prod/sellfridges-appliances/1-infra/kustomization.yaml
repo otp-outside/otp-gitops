@@ -1,0 +1,19 @@
+resources:
+ #- argocd/namespaces/ml-models.yaml
+ - argocd/namespaces/namespace-openshift-acs.yaml
+ # Machine Configuration Extensions
+ - argocd/machine-configs/machine-configs-control-planes.yaml
+ - argocd/machine-configs/machine-configs-workers.yaml
+
+patches:
+- target:
+    group: argoproj.io
+    kind: Application
+    labelSelector: "gitops.tier.layer=infra"
+  patch: |-
+    - op: add
+      path: /spec/source/repoURL
+      value: https://github.com/otp-outside/otp-gitops-infra.git
+    - op: add
+      path: /spec/source/targetRevision
+      value: master
