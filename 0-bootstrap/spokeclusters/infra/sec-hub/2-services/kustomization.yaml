@@ -12,6 +12,11 @@ resources:
  - argocd/instances/sysflow.yaml
  - argocd/instances/openldap.yaml
 
+# Logging
+ - argocd/operators/openshift-logging-operator.yaml
+ - argocd/instances/openshift-logging-instance.yaml
+
+
 patches:
 - target:
     group: argoproj.io

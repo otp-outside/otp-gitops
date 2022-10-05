@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-logging-instance
+  annotations:
+    argocd.argoproj.io/sync-wave: "250"
+  labels:
+    gitops.tier.group: cntk
+    gitops.tier.layer: services
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: services
+  source:
+    path: instances/openshift-logging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
