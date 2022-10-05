@@ -1,8 +1,8 @@
 resources:
 
 - argocd/consolenotification.yaml
-- argocd/namespaces/namespace-ibm-common-services.yaml
-- argocd/namespaces/namespace-tools.yaml
+#- argocd/namespaces/namespace-ibm-common-services.yaml
+#- argocd/namespaces/namespace-tools.yaml
 - argocd/namespaces/namespace-openshift-serverless.yaml
 - argocd/namespaces/namespace-knative-eventing.yaml
 - argocd/namespaces/namespace-knative-serving.yaml
