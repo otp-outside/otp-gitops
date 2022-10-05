@@ -1,20 +1,20 @@
 resources:
- - argocd/operators/ibm-cp4s-operator.yaml
- - argocd/instances/ibm-cp4sthreatmanagements-instance.yaml
- - argocd/operators/ibm-foundations.yaml
- - argocd/instances/ibm-foundational-services-instance.yaml
- - argocd/operators/ibm-automation-foundation-core-operator.yaml
+# - argocd/operators/ibm-cp4s-operator.yaml
+# - argocd/instances/ibm-cp4sthreatmanagements-instance.yaml
+# - argocd/operators/ibm-foundations.yaml
+# - argocd/instances/ibm-foundational-services-instance.yaml
+# - argocd/operators/ibm-automation-foundation-core-operator.yaml
  - argocd/operators/ibm-catalogs.yaml
  - argocd/operators/openshift-serverless.yaml
  - argocd/instances/openshift-serverless-knative-serving-instance.yaml
 # - argocd/operators/ibm-platform-navigator.yaml
 # - argocd/instances/ibm-platform-navigator-instance.yaml
  - argocd/instances/sysflow.yaml
- - argocd/instances/openldap.yaml
+# - argocd/instances/openldap.yaml
 
 # Logging
- - argocd/operators/openshift-logging-operator.yaml
- - argocd/instances/openshift-logging-instance.yaml
+# - argocd/operators/openshift-logging-operator.yaml
+# - argocd/instances/openshift-logging-instance.yaml
 
 
 patches:
