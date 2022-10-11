@@ -2,8 +2,8 @@ resources:
  - argocd/operators/openshift-acs-operator.yaml
  - argocd/instances/openshift-acs-instance.yaml
  - argocd/instances/sysflow.yaml
-#  - argocd/operators/openshift-virtualization-operator.yaml
-#  - argocd/instances/openshift-virtualization-instance.yaml
+ - argocd/operators/openshift-virtualization-operator.yaml
+ - argocd/instances/openshift-virtualization-instance.yaml
 patches:
 - target:
     group: argoproj.io

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: openshift-virtualisation-instance
+  name: openshift-virtualisation-operator
   annotations:
     argocd.argoproj.io/sync-wave: "251"
   labels:
@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: services
   source:
-    path: instances/openshift-virtualization-instance
+    path: operators/openshift-virtualization-operator
   syncPolicy:
     automated:
       prune: true
