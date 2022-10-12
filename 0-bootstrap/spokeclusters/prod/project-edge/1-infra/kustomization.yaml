@@ -3,7 +3,7 @@ resources:
  - argocd/namespaces/namespace-openshift-acs.yaml
  - argocd/namespaces/namespace-sysflow.yaml
  - argocd/rbac/rbac-sysflow.yaml
- # - argocd/namespaces/namespace-virtualisation.yaml
+ - argocd/namespaces/namespace-virtualisation.yaml
 patches:
 - target:
     group: argoproj.io
