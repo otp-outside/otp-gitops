@@ -4,6 +4,8 @@ resources:
  - argocd/namespaces/namespace-sysflow.yaml
  - argocd/rbac/rbac-sysflow.yaml
  - argocd/namespaces/namespace-virtualisation.yaml
+ - argocd/namespaces/suspicious.yaml
+
 patches:
 - target:
     group: argoproj.io
