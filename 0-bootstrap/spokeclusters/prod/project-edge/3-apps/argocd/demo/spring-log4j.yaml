@@ -14,7 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   project: applications
   source:
-    path: demo/spring-log4j
+    path: demos/spring-log4j
   syncPolicy:
     automated:
       prune: true
