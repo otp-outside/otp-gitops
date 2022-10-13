@@ -5,6 +5,7 @@ resources:
 - argocd/ml-models/ml-model-v2.yaml
 - argocd/ml-models/ml-model-v4.yaml
 - argocd/demo/spring-log4j.yaml
+- argocd/demo/spring-petclinic.yaml
 
 patches:
 - patch: |-

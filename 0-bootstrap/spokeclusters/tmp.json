@@ -1,0 +1,67 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/instance\":\"tools\"},\"name\":\"tools\"}}\n",
+            "mcm.ibm.com/accountID": "id-mycluster-account",
+            "mcm.ibm.com/type": "System",
+            "openshift.io/sa.scc.mcs": "s0:c28,c17",
+            "openshift.io/sa.scc.supplemental-groups": "1000790000/10000",
+            "openshift.io/sa.scc.uid-range": "1000790000/10000"
+        },
+        "creationTimestamp": "2022-10-05T04:19:41Z",
+        "deletionTimestamp": "2022-10-05T08:03:01Z",
+        "labels": {
+            "app.kubernetes.io/instance": "tools",
+            "kubernetes.io/metadata.name": "tools"
+        },
+        "name": "tools",
+        "resourceVersion": "52852073",
+        "uid": "0336a048-eda7-4a01-91d1-316e400a1f7e"
+    },
+    "spec": {
+        "finalizers": [
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2022-10-05T08:03:14Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2022-10-05T08:03:14Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2022-10-05T08:03:14Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2022-10-05T08:03:14Z",
+                "message": "Some resources are remaining: cp4sfoundations.isc.ibm.com has 1 resource instances, iscinventories.isc.ibm.com has 1 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2022-10-05T08:03:14Z",
+                "message": "Some content in the namespace has finalizers remaining: finalizers.isc.ibm.com in 2 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
