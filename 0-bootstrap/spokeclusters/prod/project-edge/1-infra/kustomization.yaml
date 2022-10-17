@@ -5,6 +5,7 @@ resources:
  - argocd/rbac/rbac-sysflow.yaml
  - argocd/namespaces/namespace-virtualisation.yaml
  - argocd/namespaces/suspicious.yaml
+ - argocd/namespaces/devsecops-dev.yaml
 
 patches:
 - target:
